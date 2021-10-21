@@ -118,6 +118,8 @@ public class Practice3 {
 			//쌤이 짜준 gogngcha 코드
 			Scanner sc = new Scanner(System.in);
 			
+			int[] arr = new int[10];
+			
 			System.out.print("숫자를 입력해주세요 > ");
 			int num = sc.nextInt();
 					
