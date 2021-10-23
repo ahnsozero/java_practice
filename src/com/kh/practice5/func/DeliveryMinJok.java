@@ -53,8 +53,8 @@ public class DeliveryMinJok{
 		
 		//사용자가 보기에 없는 피자집을 입력했을 경우의 예외처리
 		if(!(pizza[0].equals(choice)) && !(pizza[1].equals(choice))) {
-				System.out.println("세상에 피자는 도미노 피자헛 둘뿐이야..");
-						return;
+				System.out.println("세상에 피자는 도미노 피자헛 둘뿐이야.. 그냥 먹지말어");
+						return;// if문 종료하고 method2 호출한 곳으로 되돌아감
 				}		
 		
 		String[] menu = {"포테이토 피자", "불고기 피자", "슈프림 피자", "하와이안 피자"};  
