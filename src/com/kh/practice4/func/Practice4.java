@@ -24,8 +24,9 @@ public class Practice4 {
 		for(int i = 0; i <= arr.length-1; i++) {
 			arr[i] = (int)(Math.random()*10)+1;
 			// 배열 arr에 인덱스 0~9까지 정수 1~10까지의 난수 대입
+			System.out.println(arr[i] + " ");	// n n n n n n .... 이런식으로 출력
 		}		
-		System.out.println(Arrays.toString(arr));// 배열 전체값 출력
+//		System.out.println(Arrays.toString(arr));// 배열 전체값 출력
 		
 		// 최대값 max 선언과 arr[0]담겼을 난수를 max에 대입
 		int max = arr[0];
@@ -37,13 +38,13 @@ public class Practice4 {
 								// max값보다 값이 크면	
 				max = arr[i]; // max에 그 인덱스 값을 대입해준다. 
 				}
-			if(min > arr[j]) { // min에 대입된 arr[10]을 기준으로 for으로 돌리면서 arr[9], arr[8]..순으로 비교하고
+			else if(min > arr[j]) { // min에 대입된 arr[10]을 기준으로 for으로 돌리면서 arr[9], arr[8]..순으로 비교하고
 								// min값보다 값이 작으면
 				min = arr[j]; // min에 그 인덱스 값을 대입해준다.
 				}
 			}
-		System.out.println(max); // for문 밖에서 최댓값 출력 
-		System.out.println(min); // 최솟값 출력
+		System.out.println("최댓값 : " + max); // for문 밖에서 최댓값 출력 
+		System.out.println("최솟값 : " + min); // 최솟값 출력
 		
 	}	
 	
@@ -60,27 +61,44 @@ public class Practice4 {
 		//로또 번호 배열 6개 선언
 		int[] rotto = new int[6];
 		// 중복을 확인할 변수에 rotto[0]을 대입
-		int overlap = rotto[0];
+		
 		// rotto 인덱스 for문으로 0~5까지 돌리기
 		for(int i = 0; i <= rotto.length-1; i++) {
 			rotto[i] = (int)(Math.random()*46)+1;
 			// 로또배열 6자리에 1~46까지 int형태의 난수 대입하기
 			
-			//현재 인덱스i와 j의 0 ~ i-1(i보다 작을때까지) 비교하여 중복된 숫자가 존재하면 i--
-			//현재 인덱스와 그전에 입력된 인덱스의 비교를 위해서 조건식에 현재 인덱스[i]는 이전 인덱스[j]보다 작아야한다.
-				for (int j = 0; j < i; j++) {
-				if(rotto[i] == rotto[j]) {					
-					i--; //로또[i]값과 로또[j]값의 중복이 나왔기때문에
-							// i값을 감소시키고 해당하는 인덱스에 다시 중복되지 않는 값을 받을 받도록,
-					break; // 가장 가까운 for문을 끝내버린다.
+			// 내가 지금 뽑아놓은 숫자만큼!
+			if(i > 0) {
+				//j가 i가 될때까지 반복		
+				for(int j = 0; j < i ; j++) {
+					if(rotto[i] == rotto[j]) {
+						// 같은거 뽑았어? 그럼 다시 뽑아~
+						i--;
+						break;
+					}
 				}
-			} //중복은 2시간해도 노답이라 어려워서 결국.. 구글링에 승복하고 말았습니다ㅠㅠ
+			}
+			
+//			//내가 지금 뽑아놓은 숫자만큼!
+//			//현재 인덱스i와 j의 0 ~ i-1(i보다 작을때까지) 비교하여 중복된 숫자가 존재하면 i--
+//			//현재 인덱스와 그전에 입력된 인덱스의 비교를 위해서 조건식에 현재 인덱스[i]는 이전 인덱스[j]보다 작아야한다.
+//				for (int j = 0; j < i; j++) {
+//				if(rotto[i] == rotto[j]) {					
+//					i--; //로또[i]값과 로또[j]값의 중복이 나왔기때문에
+//							// i값을 감소시키고 해당하는 인덱스에 다시 중복되지 않는 값을 받을 받도록,
+//					break; // 가장 가까운 for문을 끝내버린다.
+//				}
+//			} //중복은 2시간해도 노답이라 어려워서 결국.. 구글링에 승복하고 말았습니다ㅠㅠ
 				
 	}		
-		System.out.println(Arrays.toString(rotto));
+		Arrays.sort(rotto);// sort()란, Arrays안에 있는 내림차순으로 정렬해주는 메소드
+		for(int i = 0; i <= rotto.length-1; i++) {
+			System.out.print(rotto[i] + " ");
+		}				
+//		System.out.println(Arrays.toString(rotto));
 	}
-			
-	
+		
+	// 메소드 
 	
 	public void icantMethod() {
 	
@@ -100,26 +118,48 @@ public class Practice4 {
 		String str = sc.next();
 		// 사용자에게 입력받은 문자열을 str변수에 대입해준다.
 		
-		// 사용자가 입력한 문자열 길이만큼의 문자타입의 배열을 선언해준다.
-		char[] ch = new char[str.length()];
 		
-		// 문자형 배열 ch안에 담겨있는 단일문자들의 갯수
-		int sum = ch.length;
-		//사용자가 입력한 문자열 길이만큼 인덱스를 for문으로 돌려준다.
-		for(int i = 0; i <= str.length()-1; i++) {
-			ch[i] = str.charAt(i); //위에 선언한 char타입 ch[]각각의 인덱스에 
-									//사용자가 입력한 문자 하나하나를 charAt()을 이용하여 추출해서 대입시킨다. 
-						
-			for(int j = 0; j < i; j++) {
-				if(ch[i] == ch[j]) {
-					sum -= 2;					
-					break; 
+		// 중복이지 않은 문자 갯수 => 입력받은 문자열의 길이에서 중복된 문자의 갯수를 뺀 값
+		String result = "문자열에 있는 문자 : " + str.charAt(0) + " "; // 문자열에 있는 문자:
+		int count = str.length(); // 2
+		
+		// i부터 문자열의 길이까지
+		// 위에 result에 charAt(0)로 str의 첫 인덱스를 빼놨기 때문에
+		// i를 1부터 시작한다.
+		for(int i = 1; i <= str.length()-1; i++) {
+			// 반복문으로 charAt(i)번째 인덱스와 charAt(j)번째 인덱스까지 비교
+			for(int j =0; j <= i-1; j++) {
+				if(str.charAt(i) == str.charAt(j)) {
+					// 똑같네?? 빼자~~
+					count--;
+					break;
+				}// 중복되지 않은 값을 넣어야하는데, 굳이 조건식을 주자면!
+				else if(str.charAt(i) != str.charAt(j) && j == i-1) {
+					result += str.charAt(i)+ " "; 
 				}
 			}
+		
 		}
-		System.out.println("문자열 : " + str);
-		System.out.println("문자열에 있는 문자 : " + Arrays.toString(ch));
-		System.out.println("중복되지 않는 문자 갯수 : " + sum);
+		//문자출력
+		System.out.println(result);
+		// 카운트 출력
+		System.out.println("중복되지 않은 문자 갯수 : " + count);
+		
+//		//사용자가 입력한 문자열 길이만큼 인덱스를 for문으로 돌려준다.
+//		for(int i = 0; i <= str.length()-1; i++) {
+//			ch[i] = str.charAt(i); //위에 선언한 char타입 ch[]각각의 인덱스에 
+//									//사용자가 입력한 문자 하나하나를 charAt()을 이용하여 추출해서 대입시킨다. 
+//				
+//			for(int j = 0; j < i; j++) {
+//				if(ch[i] == ch[j]) {
+//					sum -= 2;				
+//					break; 
+//				}
+					
+//		System.out.println("문자열 : " + str);
+//		System.out.println("문자열에 있는 문자 : " + Arrays.toString(ch));
+//		System.out.println("중복되지 않는 문자 갯수 : " + sum);
 			
+		}
 	}
-}
+
