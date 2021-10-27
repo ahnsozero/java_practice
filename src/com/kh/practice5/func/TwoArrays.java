@@ -32,7 +32,7 @@ public class TwoArrays {
 		char[] arr = new char[str.length()];
 		
 		String index = " "; 
-		//같은 문자가 들어있을 인덱스를 받기위한 idex 변수 선언
+		//같은 문자가 들어있을 인덱스를 받기위한 index 변수 선언
 		String result = str + "에 " + search + " 가" + " 존재하는 위치(인덱스) : ";	
 		// 위에 스트링index를 맨밑 print구문으로 합춰서 출력하기위해 스트링 타입result변수 안에 담았다.
 		int count = 0; // 같은 문자의 갯수를 셀 count변수 선언

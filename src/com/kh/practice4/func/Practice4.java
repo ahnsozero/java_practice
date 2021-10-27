@@ -38,7 +38,7 @@ public class Practice4 {
 								// max값보다 값이 크면	
 				max = arr[i]; // max에 그 인덱스 값을 대입해준다. 
 				}
-			else if(min > arr[j]) { // min에 대입된 arr[10]을 기준으로 for으로 돌리면서 arr[9], arr[8]..순으로 비교하고
+			else if(min > arr[j]) { // min에 대입된 arr[10]을 기준으로 for으로 돌리면서 arr[0], arr[1]..순으로 비교하고
 								// min값보다 값이 작으면
 				min = arr[j]; // min에 그 인덱스 값을 대입해준다.
 				}
