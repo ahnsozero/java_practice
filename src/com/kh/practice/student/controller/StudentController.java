@@ -26,7 +26,9 @@ public class StudentController {
 	
 	public int sumScore() {
 		int sum = 0;			
-		sum =+ sArr[0].getScore() + sArr[1].getScore() + sArr[2].getScore() + sArr[3].getScore() + sArr[4].getScore();	
+		for(int i = 0; i < sArr.length; i++) {
+			sum += sArr[i].getScore();
+		}
 		return sum;
 	}
 	
