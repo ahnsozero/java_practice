@@ -55,10 +55,9 @@ public class Person {
 	}	
 	
 	
-//	@override
+	@Override
 	public String toString() {
 		return name + ", " + age + ", " + height + ", " + weight;
-	}
-	
+	}	
 
 }

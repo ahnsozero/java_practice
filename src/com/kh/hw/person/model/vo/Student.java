@@ -9,7 +9,7 @@ public class Student extends Person{
 	//생성자부
 	public Student() {}
 	public Student(String name, int age, double height, double weight, int grade, String major) {
-		super(name, age, height, weight);
+		super(name, age, height, weight);// 펄스에서 상속받은 생성자
 		this.grade = grade; // 스튜던트필드의 변수 추가
 		this.major = major;
 	}
@@ -31,17 +31,9 @@ public class Student extends Person{
 	}
 	
 	
-//	@override
+	@Override
 	public String toString() {
 		return super.toString() + ", " + grade + ", " + major;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 
 }

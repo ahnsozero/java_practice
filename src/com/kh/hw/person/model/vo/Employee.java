@@ -9,8 +9,8 @@ public class Employee extends Person{
 	// 생성자부
 	public Employee() {}
 	public Employee(String name, int age, double height, double weight, int salary, String dept) {
-		super(name, age, height, weight);
-		this.salary = salary;
+		super(name, age, height, weight);// 펄슨에서 상속받은 생성자
+		this.salary = salary;// 임플로이만의 변수 추가
 		this.dept = dept;				
 	}
 	
@@ -31,7 +31,7 @@ public class Employee extends Person{
 		this.dept = dept;
 	}	
 	
-	
+	@Override
 	public String toString() {
 		return super.toString() + ", " + salary + ", " + dept;
 	}
