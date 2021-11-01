@@ -56,7 +56,7 @@ public class PersonMenu {
 					
 			switch(stmNum) {
 			case 1 : if(pc.printStudent().length == pc.personCount()[0]) { // 스튜던트배열길이와 스튜던트배열 카운트 숫자가 같다면,
-						System.out.println("잘못 입력하셨습니다. 다시 입력해주세요\n");// 더 입력못하게 막음
+						System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");// 더 입력못하게 막음
 						studentMenu();
 					}else { insertStudent(); //안같다면 다시 입력하게 해줌
 									break;//스위치문 탈출
@@ -84,7 +84,7 @@ public class PersonMenu {
 						
 			switch(emmNum) { 
 			case 1 : if(pc.printEmployee().length == pc.personCount()[1]) {//임플로이배열길이와 == 임플로이 배열 카운트 숫자가 같다면,
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요\n");// 더 입력못하게 막음
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");// 더 입력못하게 막음
 				employeeMenu();
 			}else { insertEmployee();//안같다면 다시 입력하게 해줌
 								break;
@@ -130,8 +130,8 @@ public class PersonMenu {
 	
 	public void printStudent() {		 
 		for(int i = 0; i < pc.printStudent().length; i++) {
-//			if(pc.printStudent()[i] != null)// 내 머리로는 이거 없이 될거 같은데 이거 안하면 자꾸 널포인트익셉션뜸ㅠㅠ, 왜 넣어야 하는지 모르겠음ㅠ
-			System.out.println(pc.printStudent()[i].toString());// toString()은 원래 객체 풀주소 나오는 메소드인데, 
+			if(pc.printStudent()[i] != null)// 내 머리로는 이거 없이 될거 같은데 이거 안하면 자꾸 널포인트익셉션뜸ㅠㅠ, 왜 넣어야 하는지 모르겠음ㅠ
+			System.out.println(pc.printStudent()[i].toString());// toString()은 원래 객체 풀주소 나오는 메소드인데, 스튜던트 클래스에 오버라이딩해둠
 		} System.out.println();//개행
 	}
 	
@@ -173,5 +173,8 @@ public class PersonMenu {
 			System.out.println(pc.printEmployee()[i].toString()); 
 		} System.out.println();//개행
 	}
+	
+	// 솔직히 왜이렇게 구동되는지 정확히는 모르겠는데 컴파일 시켜봐서 안되면 코드 이것저것 고쳐가면서 되면 되는대로  
+	// 이런식으로해서 내가 만들어놓고 나도 내 코드 설명하라면 잘 모르겠음... 이런식으로 코드짜고 공부하는게 맞는건지..
 	
 }
