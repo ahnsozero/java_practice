@@ -35,7 +35,7 @@ public class Book {
 	
 	
 	public String toString() {
-		return  "[" + "Book" + "[" + title + ", author=" + author + ", publisher=" + publisher;
+		return  "[Book[title " + title + ", author=" + author + ", publisher=" + publisher + "]";
 	}
 	
 	

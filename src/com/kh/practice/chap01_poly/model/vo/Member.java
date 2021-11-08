@@ -47,8 +47,8 @@ public class Member {
 	
 	public String toString() {
 		
-		String result = "Member [name=" + name + ", age=" + age + ", gender=" + gender + ", couponcount=" + couponCount + "]";
-		return result;
+		return "Member [name=" + name + ", age=" + age + ", gender=" + gender + ", couponcount=" + couponCount + "]";
+		
 		
 		
 	}

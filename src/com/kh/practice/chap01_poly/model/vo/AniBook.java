@@ -17,7 +17,7 @@ public class AniBook extends Book {
 	}
 	
 	public String toString() {
-		return "AniBook " + super.toString() + ", coupon=" + accessAge;
+		return "AniBook " + super.toString() + ", coupon=" + accessAge + "]";
 	}
 
 }

@@ -22,7 +22,7 @@ public class CookBook extends Book{
 	
 	public String toString() {
 		
-		return "CookBook " + super.toString() + ", coupon=" + coupon;
+		return "CookBook " + super.toString() + ", coupon=" + coupon + "]";
 	}	
 
 }
